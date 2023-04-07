@@ -1,0 +1,192 @@
+\documentclass[a4paper, 12pt, oneside]{article}
+%On peut changer "oneside" en "twoside" si on sait que le résultat sera recto-verso.
+%Cela influence les marges (pas ici car elles sont identiques à droite et à gauche)
+
+% pour l'inclusion de figures en eps,pdf,jpg,....
+%\usepackage{graphicx}
+
+\usepackage{float}
+\usepackage{braket}
+
+%Marges. Désactiver pour utiliser les valeurs LaTeX par défaut
+%\usepackage[top=2.5cm, bottom=2cm, left=2cm, right=2cm, showframe]{geometry}
+\usepackage[top=2.5cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+% quelques symboles mathematiques en plus
+\usepackage{amsmath}
+\usepackage{systeme}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{amssymb}
+
+\usepackage{wrapfig}
+
+\ProvidesPackage{gensymb}
+[2022/10/13 v1.0.1 (KJH)]
+
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption,graphicx}
+
+
+%\usepackage[bookmarks=false,linkcolor=black,urlcolor=black]{hyperref}
+
+% le tout en langue francaise
+%\usepackage[francais]{babel}
+
+% on peut ecrire directement les charactères avec l'accent
+\usepackage[T1]{fontenc}
+
+
+\usepackage{xfrac}
+% a utiliser sur Linux/Windows
+%\usepackage[latin1]{inputenc}
+
+% a utiliser avec UTF8
+\usepackage[utf8]{inputenc}
+%Très utiles pour les groupes mixtes mac/PC. Un fichier texte enregistré sous codage UTF-8 est lisible dans les deux environnement.
+%Plus de problème de caractères accentués et spéciaux qui ne s'affichent pas
+
+% a utiliser sur le Mac
+%\usepackage[applemac]{inputenc}
+
+% pour l'inclusion de liens dans le document (pdflatex)
+\usepackage[colorlinks,bookmarks=false,linkcolor=black,urlcolor=blue, citecolor=black]{hyperref}
+
+%Pour l'utilisation plus simple des unités et fractions
+\usepackage{units}
+\usepackage[style=phys]{biblatex}%dinat
+\addbibresource{project_report_references.bib}
+%Pour utiliser du time new roman... Comenter pour utiliser du ComputerModern
+%\usepackage{mathptmx}
+
+%Pour du code non interprété
+\usepackage{verbatim}
+\usepackage{verbdef}% http://ctan.org/pkg/verbdef
+
+
+%Pour changer la taille des titres de section et subsection. Ajoutez manuellement les autres styles si besoin.
+\makeatletter
+\renewcommand{\section}{\@startsection {section}{1}{\z@}%
+             {-3.5ex \@plus -1ex \@minus -.2ex}%
+             {2.3ex \@plus.2ex}%
+             {\normalfont\normalsize\bfseries}}
+\makeatother
+
+\makeatletter
+\renewcommand{\subsection}{\@startsection {subsection}{1}{\z@}%
+             {-3.5ex \@plus -1ex \@minus -.2ex}%
+             {2.3ex \@plus.2ex}%
+             {\normalfont\normalsize\bfseries}}
+\makeatother
+
+% nouvelles commandes LaTeX, utilis\'ees comme abreviations utiles
+
+\newcommand{\mail}[1]{{\href{mailto:#1}{#1}}}
+\newcommand{\ftplink}[1]{{\href{ftp://#1}{#1}}}
+%
+% latex SqueletteRapport.tex      % compile la source LaTeX
+% xdvi SqueletteRapport.dvi &     % visualise le resultat
+% dvips -t a4 -o SqueletteRapport.ps SqueletteRapport % produit un PostScript
+% ps2pdf SqueletteRapport.ps      % convertit en pdf
+
+% pdflatex SqueletteRapport.pdf    % compile et produit un pdf
+
+% ======= Le document commence ici ======
+\newcommand{\inlineeqnum}{\refstepcounter{equation}~~\mbox{(\theequation)}}
+\begin{document}
+
+% Le titre, l'auteur et la date
+\title{Semester Project: Variational Monte-Carlo for Continuous Space Many-Body Quantum Physics}
+\author{Giorgio Facelli\\ 
+{\small \mail{giorgio.facelli@epfl.ch}}}
+
+\maketitle % Table des matieres
+\begin{center}
+Hosting group: CQSL lead by Prof. Giuseppe Carleo \\
+Supervision: Gabriel Pescia
+\end{center}
+% Quelques options pour les espacements entre lignes, l'indentation 
+% des nouveaux paragraphes, et l'espacement entre paragraphes
+\baselineskip=16pt
+\parindent=0pt
+\parskip=12pt
+
+\section{Introduction}
+Multiple areas of physics are nowadays faced with the difficult task of simulating systems obeying the laws of 
+quantum mechanics, the theory that to this day most accurately describes the nature around us. Academic reasearch 
+is in fact exploiting, now more than ever, exotic quantum effects which arise in particular systems. This is why 
+fields such as condensed matter physics, quantum chemistry and quantum optics are in desperate need to explore 
+and analyse a wide variety of systems that could trigger breakthroughs in scientifical developments. 
+However, simulating such systems is a demanding computational task. In general terms, a system of $N$ interacting 
+particles is described by a statevector living in a Hilbert space which scales up exponentially with the number of 
+its constituents. Hence, the complete description of the wavefunction needs exponentially many coefficients, which 
+is normally computationally unfeasible. Nonetheless, in the recent years, new advanced computational techniques 
+along with Machine Learning (ML) methods based on deep learning, have been shown to tackle such systems in a more efficient way. 
+This report sets out to present a statistical-based computational approach to simulating quantum systems, 
+namely \textit{Variational Monte-Carlo} (VMC) approach \cite{mcmillan_ground_1965}, and how we can combine this 
+with a neural network architecture.\\
+VMC is a computational method primarily used to estimate the ground state properties of a quantum system. 
+In particular, the ground-state energy and the corresponding ground-state wavefunction of a system are computed 
+by parametrizing the wavefunction of said system and reducing its energy successively by means of 
+\textit{stochastic gradient descent} (SGD) \cite{ruder_overview_2016}. Early applications approximated the ground-state of 
+the homogenous electron gas \cite{ceperley_ground_1978, ortiz_correlation_1994}. Later on, the cohesive energies of multiple compounds 
+were estimated \cite{li_cohesive_1991, rajagopal_variational_1995, malatesta_variational_1997}.  \\
+First efforts of combining VMC with ML culminated in the developement of the so-called Neural Quantum 
+States (NQS). These use neural networks to parameterize the quantum mechanical wave-function. They 
+have been shown to provide state-of-the-art results on quantum spin-systems such as the one-dimensional 
+transverse field Ising model and antiferromagnetic Heisenberg model \cite{carleo_solving_2017}. Such models are motivated by the 
+capability of neural networks to approximate an arbitrary function. 
+The accuracy of such methods has also been shown for systems in continuous space by analysing a variety of 
+atoms and small molecules \cite{hermann_deep-neural-network_2020, pfau_ab_2020, Pescia_2022}. \\
+The work presented here will cover the theoretical backgound which lies behind the idea of VMC for many-body quantum 
+systems in continuous space. Artificial neural networks will also be introduced. We will then move on to consider a 
+system made of $N$ non-interacting bosonic quantum oscillators. Results obtained with the VMC method using simple 
+gaussian and multivariate gaussian ansatze will be presented, and their accuracy analysed. Lastly, we will also show 
+the same results using a NQS-based ansatz. To test the correct functioning of the VMC developed for this project, 
+the NQS model will also be compared to the same ansatz trained using NetKet, an open-source Python library in which 
+every aspect of the work included in this report is already implemented in a more comprehensive way \cite{Vicentini_2022}.
+
+
+
+\section{Theoretical background}\label{sec:theory}
+
+\subsection{The variational principle}
+
+\subsection{VMC approach and observables' approximation}\label{sec:obs_approx}
+
+\subsection{Markov Chain Monte Carlo (MCMC)}
+
+\subsubsection{Metropolis-Hastings algorithm}
+
+\subsection{Optimization scheme}\label{sec:optimization_scheme}
+
+\subsubsection{Zero-variance property}\label{sec:zero_variance}
+
+\subsection{Auto-correlation time}
+\subsection{Artificial Neural Networks}
+
+
+\subsection{A few words on the code}
+
+
+\subsection{Non-interacting quantum harmonic oscillators}\label{sec:ansatze}
+
+\section{Main results}\label{sec:results}
+
+
+\subsection{Gaussian ansatz}\label{sec:one_parameter}
+
+
+\subsection{Multivariate gaussian ansatz}\label{sec:matrix_parameter}
+
+
+\subsection{Neural-Network ansatz}\label{sec:neural_network_ansatz}
+
+
+\section{Discussion}
+
+\section{Conclusions}
+
+\printbibliography
+
+\end{document}

@@ -46,7 +46,7 @@ ha = ekin + pot
 model = logpsi(L= L, sdim = sdim, graph_number = 1, phi_out_dim = 10, phi_hidden_lyrs = 1, phi_widths=(10,), rho_widths=(10,), rho_hidden_lyrs=1)
 
 vs = nk.vqs.MCState(sab, model, n_samples=10**4, n_discard_per_chain=32)
-op = nk.optimizer.Sgd(0.05)
+op = nk.optimizer.Sgd(0.01)
 sr = nk.optimizer.SR(diag_shift=0.005)
 
 gs = nk.VMC(ha, op, sab, variational_state=vs, preconditioner=sr)

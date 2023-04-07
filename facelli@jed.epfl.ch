@@ -30,7 +30,7 @@ def mycb(step, logged_data, driver):
 L = 20
 nparticles = 20
 sigma = 2**-.5
-sdim = 1.
+sdim = 1
 eps = 2.
 
 v = lambda x: V(x,sdim,L,eps,sigma)
@@ -50,4 +50,4 @@ op = nk.optimizer.Sgd(0.01)
 sr = nk.optimizer.SR(diag_shift=0.005)
 
 gs = nk.VMC(ha, op, sab, variational_state=vs, preconditioner=sr)
-gs.run(n_iter=200, callback=mycb, out="int_bosons_1d_N=20_L=20")
+gs.run(n_iter=500, callback=mycb, out="int_bosons_1d_N=20_L=20")
