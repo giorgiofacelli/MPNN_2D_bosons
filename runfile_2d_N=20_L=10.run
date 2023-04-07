@@ -2,7 +2,7 @@
 #
 #SBATCH --nodes=1
 #SBATCH --ntasks=16
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=2
 #SBATCH --time=24:00:00
 #SBATCH --mem=90000
 #SBATCH --qos=serial
@@ -10,4 +10,4 @@ module load gcc openmpi python
 
 source /scratch/facelli/venvs/bin/activate
 
-srun python /scratch/facelli/2d_N=30_MPNN_run.py
+srun python /scratch/facelli/2d_N=20_L=10_MPNN.py

@@ -27,8 +27,8 @@ def mycb(step, logged_data, driver):
     return True
 
 
-L = 20
-nparticles = 30
+L = 10
+nparticles = 20
 sigma = 2**-.5
 sdim = 2
 eps = 2.
@@ -37,7 +37,7 @@ v = lambda x: V(x,sdim,L,eps,sigma)
 
 hilb = nk.hilbert.Particle(N=nparticles, L=(L,L,), pbc=True)
 
-sab = nk.sampler.MetropolisGaussian(hilb, sigma=0.15, n_chains=16, n_sweeps=32)
+sab = nk.sampler.MetropolisGaussian(hilb, sigma=0.1, n_chains=16, n_sweeps=32)
 
 ekin = nk.operator.KineticEnergy(hilb, mass=1.0)
 pot = nk.operator.PotentialEnergy(hilb, v)
@@ -50,4 +50,4 @@ op = nk.optimizer.Sgd(0.05)
 sr = nk.optimizer.SR(diag_shift=0.005)
 
 gs = nk.VMC(ha, op, sab, variational_state=vs, preconditioner=sr)
-gs.run(n_iter=500, callback=mycb, out="int_bosons_2d_N=30_L=20")
+gs.run(n_iter=10**3, callback=mycb, out="int_bosons_2d_N=20_L=10")

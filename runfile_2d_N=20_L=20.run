@@ -10,4 +10,4 @@ module load gcc openmpi python
 
 source /scratch/facelli/venvs/bin/activate
 
-srun python /scratch/facelli/2d_N=20_MPNN_run.py
+srun python /scratch/facelli/2d_N=20_L=20_MPNN.py
