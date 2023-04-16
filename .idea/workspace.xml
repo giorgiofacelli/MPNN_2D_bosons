@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac36abe1-ef93-473b-900a-1447e29e0942" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/2d_N=20_L=10_MPNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/2d_N=20_L=10_MPNN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2d_N=20_L=20_MPNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/2d_N=20_L=20_MPNN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info_runs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/info_runs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/int_bosons_2d_N=20_L=20.log" beforeDir="false" afterPath="$PROJECT_DIR$/int_bosons_2d_N=20_L=20.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/int_bosons_2d_N=20_L=20.mpack" beforeDir="false" afterPath="$PROJECT_DIR$/int_bosons_2d_N=20_L=20.mpack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runfile_2d_N=20_L=10.run" beforeDir="false" afterPath="$PROJECT_DIR$/runfile_2d_N=20_L=10.run" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runfile_2d_N=20_L=20.run" beforeDir="false" afterPath="$PROJECT_DIR$/runfile_2d_N=20_L=20.run" afterDir="false" />
-    </list>
+    <list default="true" id="ac36abe1-ef93-473b-900a-1447e29e0942" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
