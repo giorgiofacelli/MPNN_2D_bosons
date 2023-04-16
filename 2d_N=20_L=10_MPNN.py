@@ -50,4 +50,4 @@ op = nk.optimizer.Sgd(0.05)
 sr = nk.optimizer.SR(diag_shift=0.005)
 
 gs = nk.VMC(ha, op, sab, variational_state=vs, preconditioner=sr)
-gs.run(n_iter=10**3, callback=mycb, out="int_bosons_2d_N=20_L=10")
+gs.run(n_iter=2*10**3, callback=mycb, out="int_bosons_2d_N=20_L=10")
