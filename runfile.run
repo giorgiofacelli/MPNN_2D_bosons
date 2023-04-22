@@ -1,0 +1,13 @@
+#!/bin/bash -l
+#
+#SBATCH --nodes=1
+#SBATCH --ntasks=16
+#SBATCH --cpus-per-task=4
+#SBATCH --time=24:00:00
+#SBATCH --mem=90000
+#SBATCH --qos=serial
+module load gcc openmpi python
+
+source /scratch/facelli/venvs/bin/activate
+
+srun python /scratch/facelli/MPNN_run.py

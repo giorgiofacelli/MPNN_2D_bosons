@@ -80,10 +80,14 @@ class MPNN(nn.Module):
         hij = self.param("hidden_state_edges", self.initializer, (1, 1, 1, self.phi_widths[0]), np.float64)
         hi = jnp.tile(hi, (N_samples,N,1))
         hij = jnp.tile(hij, (N_samples,N,N,1))
-        
-        dist = distance_matrix(ri, self.L, periodic = False) #EUCLIDEAN DISTANCE BETWEEN VECTORS
-        rij = distance_matrix(ri, self.L,  periodic = True)  #PERIODIC DISTANCE BETWEEN VECTORS
 
+        #Euclidean distance between vectors
+        dist = distance_matrix(ri, self.L, periodic = False)
+
+        #Periodic distance between vectors
+        rij = distance_matrix(ri, self.L,  periodic = True)
+
+        ri = jnp.concatenate((jnp.sin(ri*2.0*jnp.pi/self.L), jnp.cos(ri*2.0*jnp.pi/self.L)), axis=-1)
 
         normij = jnp.linalg.norm(jnp.sin(jnp.pi*dist/self.L) + jnp.eye(N)[..., None], axis=-1, keepdims=True)**2 * (
                     1. - jnp.eye(N)[..., None]) #NORM  OF THE TRANSFORMED DISTANCE VECTORS
@@ -98,7 +102,7 @@ class MPNN(nn.Module):
             f = Phi(output_dim = self.phi_out_dim, widths = self.phi_widths, hidden_lyrs = self.phi_hidden_lyrs)
             g = Phi(output_dim = self.phi_out_dim, widths = self.phi_widths, hidden_lyrs = self.phi_hidden_lyrs)
             nuij = phi(xij)
-            
+
             if i != self.graph_number-1:
                 xij = jnp.concatenate((rij, normij, f(jnp.concatenate((xij, nuij), axis=-1))), axis=-1)
   

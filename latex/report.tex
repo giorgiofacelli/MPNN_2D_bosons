@@ -1,9 +1,4 @@
 \documentclass[a4paper, 12pt, oneside]{article}
-%On peut changer "oneside" en "twoside" si on sait que le résultat sera recto-verso.
-%Cela influence les marges (pas ici car elles sont identiques à droite et à gauche)
-
-% pour l'inclusion de figures en eps,pdf,jpg,....
-%\usepackage{graphicx}
 
 \usepackage{float}
 \usepackage{braket}
@@ -35,7 +30,7 @@
 
 % on peut ecrire directement les charactères avec l'accent
 \usepackage[T1]{fontenc}
-
+\renewcommand{\familydefault}{\sfdefault}
 
 \usepackage{xfrac}
 % a utiliser sur Linux/Windows
@@ -55,7 +50,7 @@
 %Pour l'utilisation plus simple des unités et fractions
 \usepackage{units}
 \usepackage[style=phys]{biblatex}%dinat
-\addbibresource{project_report_references.bib}
+%\addbibresource{project_report_references.bib}
 %Pour utiliser du time new roman... Comenter pour utiliser du ComputerModern
 %\usepackage{mathptmx}
 
@@ -123,28 +118,28 @@ its constituents. Hence, the complete description of the wavefunction needs expo
 is normally computationally unfeasible. Nonetheless, in the recent years, new advanced computational techniques 
 along with Machine Learning (ML) methods based on deep learning, have been shown to tackle such systems in a more efficient way. 
 This report sets out to present a statistical-based computational approach to simulating quantum systems, 
-namely \textit{Variational Monte-Carlo} (VMC) approach \cite{mcmillan_ground_1965}, and how we can combine this 
+namely \textit{Variational Monte-Carlo} (VMC) approach (mcmillan ground 1965), and how we can combine this 
 with a neural network architecture.\\
 VMC is a computational method primarily used to estimate the ground state properties of a quantum system. 
 In particular, the ground-state energy and the corresponding ground-state wavefunction of a system are computed 
 by parametrizing the wavefunction of said system and reducing its energy successively by means of 
-\textit{stochastic gradient descent} (SGD) \cite{ruder_overview_2016}. Early applications approximated the ground-state of 
-the homogenous electron gas \cite{ceperley_ground_1978, ortiz_correlation_1994}. Later on, the cohesive energies of multiple compounds 
-were estimated \cite{li_cohesive_1991, rajagopal_variational_1995, malatesta_variational_1997}.  \\
+\textit{stochastic gradient descent} (SGD) (ruder overview 2016). Early applications approximated the ground-state of 
+the homogenous electron gas (ceperley ground 1978, ortiz correlation 1994). Later on, the cohesive energies of multiple compounds 
+were estimated (li cohesive 1991, rajagopal variational 1995, malatesta variational 1997).  \\
 First efforts of combining VMC with ML culminated in the developement of the so-called Neural Quantum 
 States (NQS). These use neural networks to parameterize the quantum mechanical wave-function. They 
 have been shown to provide state-of-the-art results on quantum spin-systems such as the one-dimensional 
-transverse field Ising model and antiferromagnetic Heisenberg model \cite{carleo_solving_2017}. Such models are motivated by the 
+transverse field Ising model and antiferromagnetic Heisenberg model (carleo solving 2017). Such models are motivated by the 
 capability of neural networks to approximate an arbitrary function. 
 The accuracy of such methods has also been shown for systems in continuous space by analysing a variety of 
-atoms and small molecules \cite{hermann_deep-neural-network_2020, pfau_ab_2020, Pescia_2022}. \\
+atoms and small molecules (hermann deep-neural-network 2020, pfau ab 2020, Pescia 2022). \\
 The work presented here will cover the theoretical backgound which lies behind the idea of VMC for many-body quantum 
 systems in continuous space. Artificial neural networks will also be introduced. We will then move on to consider a 
 system made of $N$ non-interacting bosonic quantum oscillators. Results obtained with the VMC method using simple 
 gaussian and multivariate gaussian ansatze will be presented, and their accuracy analysed. Lastly, we will also show 
 the same results using a NQS-based ansatz. To test the correct functioning of the VMC developed for this project, 
 the NQS model will also be compared to the same ansatz trained using NetKet, an open-source Python library in which 
-every aspect of the work included in this report is already implemented in a more comprehensive way \cite{Vicentini_2022}.
+every aspect of the work included in this report is already implemented in a more comprehensive way (Vicentini 2022).
 
 
 
@@ -187,6 +182,6 @@ every aspect of the work included in this report is already implemented in a mor
 
 \section{Conclusions}
 
-\printbibliography
+%\printbibliography
 
 \end{document}
