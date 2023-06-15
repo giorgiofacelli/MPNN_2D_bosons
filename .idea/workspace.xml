@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac36abe1-ef93-473b-900a-1447e29e0942" name="Changes" comment="" />
+    <list default="true" id="ac36abe1-ef93-473b-900a-1447e29e0942" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/analysis-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/analysis-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1d_MPNN_run.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2d_N=20_L=10_MPNN.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2d_N=20_L=20_MPNN.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MPNN_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/MPNN_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/analysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info_runs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/int_bosons_2d_N=20_L=10.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/int_bosons_2d_N=20_L=10.mpack" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/int_bosons_2d_N=20_L=20.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/int_bosons_2d_N=20_L=20.mpack" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runfile_1d.run" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runfile_2d_N=20_L=10.run" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runfile_2d_N=20_L=20.run" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +38,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/giorgio/semesterproject&quot;
+    &quot;last_opened_file_path&quot;: &quot;/home/giorgio/semesterproject&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -34,6 +52,9 @@
       <updated>1680974416926</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
