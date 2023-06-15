@@ -1,0 +1,30 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'report.blg'
+[74] biber:340> INFO - === Fri Jun  9, 2023, 15:56:18
+[86] Biber.pm:418> INFO - Reading 'report.bcf'
+[145] Biber.pm:972> INFO - Found 20 citekeys in bib section 0
+[156] Biber.pm:4383> INFO - Processing section 0
+[165] Biber.pm:4574> INFO - Looking for bibtex file 'report_citations.bib' for section 0
+[166] bibtex.pm:1713> INFO - LaTeX decoding ...
+[189] bibtex.pm:1518> INFO - Found BibTeX data source 'report_citations.bib'
+[352] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[352] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[353] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[353] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[370] bbl.pm:654> INFO - Writing 'report.bbl' with encoding 'UTF-8'
+[384] bbl.pm:757> INFO - Output to report.bbl
+[385] Biber.pm:130> WARN - legacy month field 'Dec' in entry 'carleo_2019' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'Apr' in entry 'mcmillan_1965' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'Aug' in entry 'schiff_1967' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'Oct' in entry 'dornheim_2016' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'Jul' in entry 'magro_1993' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'May' in entry 'kroiss_2016' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'Jun' in entry 'hibat-allah_2020' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'Oct' in entry 'choo_2018' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'May' in entry 'choo_2020' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'Jul' in entry 'czischek_2018' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'May' in entry 'yoshioka_2021' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'May' in entry 'pescia_2022' is not an integer - this will probably not sort properly.
+[385] Biber.pm:130> WARN - legacy month field 'Sep' in entry 'pfau_2020' is not an integer - this will probably not sort properly.
+[386] Biber.pm:130> WARN - legacy month field 'Oct' in entry 'hermann_2020' is not an integer - this will probably not sort properly.
+[386] Biber.pm:132> INFO - WARNINGS: 14

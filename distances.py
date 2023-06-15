@@ -12,8 +12,9 @@ def dist_min_image(x, L, sdim, norm = False):
         - L: size of the system
         - sdim: spatial dimension
         - norm: boolean to output norm or not
+
         Returns:
-        distances / norm of the distances
+        - distances / norm of the distances
     '''
     
     n_particles = x.shape[0]//sdim
@@ -22,7 +23,7 @@ def dist_min_image(x, L, sdim, norm = False):
     distances = (-x[jnp.newaxis, :, :] + x[:, jnp.newaxis, :])[
     jnp.triu_indices(n_particles, 1)]
 
-    distances = jnp.remainder(distances + L / 2.0, L) - L / 2.0
+    distances = jnp.remainder(distances[...,:] + L / 2.0, L) - L / 2.0
     if norm:
         return  jnp.linalg.norm(distances, axis=-1)
     else:
@@ -37,8 +38,12 @@ def make_vec_periodic(vec, L):
         Args:
         - vec: vector to be made periodic
         - L: size of the system
+
+        Returns:
+        - periodic version of the vector
     '''
-    return jnp.concatenate((jnp.sin(vec*2.0*jnp.pi/L), jnp.cos(vec*2.0*jnp.pi/L)), axis=-1)
+    periodic = jnp.concatenate((jnp.sin(2.*jnp.pi*vec[...,:]/L), jnp.cos(2.*jnp.pi*vec[...,:]/L)), axis = -1)
+    return periodic
 
 
 def distance_matrix(x, L, periodic = True):
@@ -49,6 +54,9 @@ def distance_matrix(x, L, periodic = True):
         - x: coords on which to compute distance
         - L: size of the system
         - periodic: boolean to output periodic distances or not
+
+        Returns:
+        - distances / norm of the distances  
     '''
 
     rij = x[..., :, jnp.newaxis, :] - x[..., jnp.newaxis, :, :]

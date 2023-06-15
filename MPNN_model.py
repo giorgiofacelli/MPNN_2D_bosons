@@ -10,7 +10,7 @@ from jax.nn.initializers import (
     lecun_normal,
     normal
 )
-from distances import distance_matrix, dist_min_image
+from distances import distance_matrix, dist_min_image, make_vec_periodic
 
 
 
@@ -39,6 +39,7 @@ class Phi(nn.Module):
 
             x = nn.Dense(features = self.widths[i], kernel_init = self.initializer, param_dtype=np.float64)(x)
             x = self.activation(x)
+            x = nn.LayerNorm(param_dtype=np.float64,use_bias = False,use_scale=False)(x)
 
         #APPLY LAST LAYER WITH OUTPUT DIMENSION REQUIRED
 
@@ -56,11 +57,19 @@ class Phi(nn.Module):
 
 class MPNN(nn.Module):
 
-    """
-        Class for coordinate transformations with Message-Passing Neural Network
-    """
+    '''Class for coordinate transformations with Message-Passing Neural Network
 
-    L: float
+        Attributes:
+        - L:                 Length of each dimension of the system
+        - graph_number:      Number of graph transformations to apply to coords
+        - phi_out_dim:       Output dimension to apply at each MLP
+        - initializer:       Intialization function
+        - activation:        Activation function for each MLP
+        - phi_hidden_lyrs:   Number of hidden layers for each MLP
+        - phi_diths:         Corresponding widths to each layer
+    '''
+
+    L: Tuple
     graph_number: int
     phi_out_dim: int
     initializer: NNInitFunc = lecun_normal()
@@ -74,18 +83,25 @@ class MPNN(nn.Module):
         assert len(ri.shape) == 3 
         
         N_samples, N, sdim = ri.shape
+        L = jnp.array(self.L)
 
         #creation of hidden nodes and edges
         hi = self.param("hidden_state_nodes", self.initializer, (1, 1, self.phi_widths[0]), np.float64)
         hij = self.param("hidden_state_edges", self.initializer, (1, 1, 1, self.phi_widths[0]), np.float64)
         hi = jnp.tile(hi, (N_samples,N,1))
         hij = jnp.tile(hij, (N_samples,N,N,1))
-        
-        dist = distance_matrix(ri, self.L, periodic = False) #EUCLIDEAN DISTANCE BETWEEN VECTORS
-        rij = distance_matrix(ri, self.L,  periodic = True)  #PERIODIC DISTANCE BETWEEN VECTORS
+
+        #Euclidean distance between vectors
+        dist = distance_matrix(ri, L, periodic = False)
+
+        #Periodic distance between vectors
+        rij = distance_matrix(ri, L,  periodic = True)
+
+        #make position vector periodic
+        ri = make_vec_periodic(ri, L)
 
 
-        normij = jnp.linalg.norm(jnp.sin(jnp.pi*dist/self.L) + jnp.eye(N)[..., None], axis=-1, keepdims=True)**2 * (
+        normij = jnp.linalg.norm(jnp.sin(jnp.pi*dist[...,:]/L) + jnp.eye(N)[..., None], axis=-1, keepdims=True)**2 * (
                     1. - jnp.eye(N)[..., None]) #NORM  OF THE TRANSFORMED DISTANCE VECTORS
          
         xi = jnp.concatenate((ri, hi), axis = -1)
@@ -98,12 +114,12 @@ class MPNN(nn.Module):
             f = Phi(output_dim = self.phi_out_dim, widths = self.phi_widths, hidden_lyrs = self.phi_hidden_lyrs)
             g = Phi(output_dim = self.phi_out_dim, widths = self.phi_widths, hidden_lyrs = self.phi_hidden_lyrs)
             nuij = phi(xij)
-            
+
             if i != self.graph_number-1:
                 xij = jnp.concatenate((rij, normij, f(jnp.concatenate((xij, nuij), axis=-1))), axis=-1)
   
-            xi = jnp.concatenate((ri, g(jnp.concatenate((xi, jnp.sum(nuij, axis=-2)), axis=-1))), axis=-1)
-
+            #xi = jnp.concatenate((ri, g(jnp.concatenate((xi, jnp.sum(nuij, axis=-2)), axis=-1))), axis=-1)
+            xi = g(jnp.concatenate((xi, jnp.sum(nuij, axis=-2)), axis=-1))
 
         return xi
     
@@ -118,7 +134,7 @@ class logpsi(nn.Module):
         Brings together MPNN and a simple feed-forward NN to model \ln(\psi)
     """
 
-    L: float
+    L: Tuple
     sdim: int
     graph_number: int
     phi_out_dim: int
@@ -128,7 +144,7 @@ class logpsi(nn.Module):
     phi_widths: Tuple = (5,)
 
     rho_hidden_lyrs: int = 1
-    rho_widths: int = (5,)
+    rho_widths: Tuple = (5,)
 
     @nn.compact
     def __call__(self, x):
@@ -146,6 +162,7 @@ class logpsi(nn.Module):
             
             x = nn.Dense(features = self.rho_widths[i], kernel_init = self.initializer, param_dtype = np.float64)(x)
             x = self.activation(x)
+            x = nn.LayerNorm(param_dtype=np.float64,use_bias = False,use_scale=False)(x)
 
         x = nn.Dense(features = 1, kernel_init = self.initializer, param_dtype = np.float64)(x)
         x = jnp.sum(x, axis = -2)

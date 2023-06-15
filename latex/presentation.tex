@@ -1,0 +1,135 @@
+\documentclass{beamer}
+\usepackage{wrapfig}
+\usepackage{commath}
+\usepackage{braket}
+%\usepackage{physics}
+\usepackage{amsmath,amssymb,amsfonts,scalerel,stackengine}
+\usepackage{mathpazo}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage[makeroom]{cancel}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usetikzlibrary{quantikz}
+\usepackage{bm}
+
+
+%\usepackage{sectsty}
+\usepackage[export]{adjustbox}
+\usetheme{Boadilla}
+\usefonttheme[onlymath]{serif} 
+\setbeamertemplate{navigation symbols}{}
+\usepackage{graphicx}
+% NOTE: use biber and cite with \footfullcite{key}
+\usepackage[sorting=none]{biblatex}
+\usepackage{amsmath}
+\usepackage{ulem}
+%\addbibresource{project3_references.bib}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot} \insertshortdate{}%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+ 
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\DeclareMathOperator*{\argmin}{argmin}
+\renewcommand*{\bibfont}{\normalfont\tiny}
+\renewcommand{\footnotesize}{\tiny}
+\title{Semester Project: Variational Monte-Carlo for strongly correlated bosons in continuous space}
+\author{Giorgio Facelli}
+\date{28/06/2023}
+
+\setbeamercolor{normal text}{fg=black}
+\begin{document}
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+\begin{frame}{Contents}
+  \begin{enumerate}
+    \item \large Article
+    \begin{enumerate}[I]
+      \item Motivation
+      \item Implementation a simulation
+      \item Recent technological breakthroughs
+    \end{enumerate} 
+    \item \large Two- and three-spin Heisenberg model
+    \begin{enumerate}[I]
+      \item Physical Observables
+      \item Error analysis
+    \end{enumerate}
+    \item \large Conclusions
+  \end{enumerate}
+    %\begin{block}
+    %    {Dummy Block}
+    %    \lipsum[1]
+    %\end{block}
+\end{frame}
+
+\begin{frame}{Introduction}
+
+\end{frame}
+
+\begin{frame}{Variational Monte-Carlo}
+Exploits the \textit{variational principle}, which states that the ground-state $\ket{\Psi_0}$ minimizes 
+the energy:
+\begin{equation}
+  \ket{\Psi_0} = \argmin_{\ket{\Psi}}\biggr[\dfrac{\braket{\Psi|\hat{H}|
+  \Psi}}{\braket{\Psi|\Psi}}\biggr]
+\end{equation}
+Given an ansatz $\ket{\Psi(\bm{\theta})}$, the parameters are optimized so as to reach the minimum in 
+energy.\\
+\textbf{Observables:} Almost every observable can be estimated as a stochastic expectation value over its 
+\textit{local} counterpart:
+\begin{equation}
+\braket{\hat{O}} = E_{\Pi(\bm{x})}\big[O_{\text{loc}}(\bm{x})\big]\text{   where   }
+O_\text{loc}(\bm{x}) = \int \,d\bm{x}' O_{\bm{xx}'} \dfrac{\Psi(\bm{x}')}{\Psi(\bm{x})}
+\end{equation}
+\end{frame}
+  
+\begin{frame}{Simulation of Heisenberg model}
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+{\scriptsize
+\begin{align*}
+H_{2-spin} = -J(\sigma_x^{(1)}\sigma_x^{(2)}+\sigma_y^{(1)}\sigma_y^{(2)}+\sigma_z^{(1)}\sigma_z^{(2)})
+\end{align*}
+}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+{\scriptsize
+\begin{align*}
+H_{3-spin} &= -J(\sigma_x^{(1)}\sigma_x^{(2)}+\sigma_x^{(2)}\sigma_x^{(3)}+\sigma_y^{(1)}\sigma_y^{(2)}+ \\
+&+\sigma_y^{(2)}\sigma_y^{(3)}+\sigma_z^{(1)}\sigma_z^{(2)}+\sigma_z^{(2)}\sigma_z^{(3)})
+\end{align*}
+}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+\begin{frame}{Conclusions}
+\begin{itemize}
+\item A quantum computer would potentially allow to study many unexplored systems.
+\item NISQ still far away from having fully functional UQS at disposal.
+\item Accuracy of a simulation to be assessed by considering digital and hardware error.
+\end{itemize}
+\vspace{20mm}
+%\printbibliography
+
+\end{frame}
+\end{document}
+
