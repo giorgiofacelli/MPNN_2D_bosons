@@ -51,15 +51,12 @@
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
-      <file>phys.dbx</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
       <file>standard.bbx</file>
       <file>numeric.bbx</file>
       <file>numeric-comp.bbx</file>
-      <file>phys.bbx</file>
       <file>numeric-comp.cbx</file>
-      <file>phys.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
     </requires>
@@ -81,6 +78,9 @@
     </provides>
     <requires type="dynamic">
       <file>report.bcf</file>
+    </requires>
+    <requires type="editable">
+      <file>report_citations.bib</file>
     </requires>
   </external>
 </requests>

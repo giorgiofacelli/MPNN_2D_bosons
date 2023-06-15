@@ -1,0 +1,13 @@
+int_bosons_2d_N=16_L={6,12,16}: mass=30, graphs=1, lyrs=1, widths=10, NO LayerNorm, iters=10**3
+
+int_bosons_2d_N=16_L={6,12,16}: mass=30, graphs=1, lyrs=1, widths=10, LayerNorm, iters=10**3
+
+int_bosons_2d_N=16_L=12_{a}_m=100_iters=2000: mass=100, graphs=1, lyrs=1, widths=10, box aspect ratio = a, LayerNorm, iters=2*10**3
+
+
+int_bosons_2d_N=16_L=12_LN_lyrs={len(lyrs)}: mass=30, graphs=1, lyrs=lyrs, widths = 10, LayerNorm, iters=10**3
+
+
+int_bosons_2d_N=16_L=12_LN_graphs={graph}: mass=30, lyrs=1, widths=10, LayerNorm, iters=10**3
+
+int_bosons_2d_N=16_rs={rs}_m=100: mass=100, rs=rs, graphs=1, lyrs=lyrs, widths = 10, LayerNorm, iters=2*10**3

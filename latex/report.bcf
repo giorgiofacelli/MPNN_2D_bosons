@@ -91,15 +91,15 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxbibnames</bcf:key>
-      <bcf:value>999</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>2</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxsortnames</bcf:key>
-      <bcf:value>999</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxitems</bcf:key>
@@ -317,15 +317,15 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxbibnames</bcf:key>
-      <bcf:value>999</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>2</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxsortnames</bcf:key>
-      <bcf:value>999</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxitems</bcf:key>
@@ -626,10 +626,6 @@
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">subentry</bcf:option>
-    <bcf:option datatype="boolean">articletitle</bcf:option>
-    <bcf:option datatype="boolean">chaptertitle</bcf:option>
-    <bcf:option datatype="boolean">pageranges</bcf:option>
-    <bcf:option datatype="boolean">biblabel</bcf:option>
     <bcf:option datatype="boolean">subentrycomp</bcf:option>
     <bcf:option datatype="boolean">bibtexcaseprotection</bcf:option>
     <bcf:option datatype="integer">mincrossrefs</bcf:option>
@@ -1330,7 +1326,6 @@
       <bcf:field fieldtype="field" format="xsv" datatype="option" skip_output="true">relatedoptions</bcf:field>
       <bcf:field fieldtype="field" datatype="range">pages</bcf:field>
       <bcf:field fieldtype="field" datatype="code">execute</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">collaboration</bcf:field>
     </bcf:fields>
     <bcf:entryfields>
       <bcf:field>abstract</bcf:field>
@@ -2349,8 +2344,56 @@
   <!-- CITATION DATA -->
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
+    <bcf:datasource type="file" datatype="bibtex" glob="false">report_citations.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1">carleo_2019</bcf:citekey>
+    <bcf:citekey order="2">mcmillan_1965</bcf:citekey>
+    <bcf:citekey order="2">schiff_1967</bcf:citekey>
+    <bcf:citekey order="2">dornheim_2016</bcf:citekey>
+    <bcf:citekey order="2">magro_1993</bcf:citekey>
+    <bcf:citekey order="2">kroiss_2016</bcf:citekey>
+    <bcf:citekey order="3">carleo_2017</bcf:citekey>
+    <bcf:citekey order="3">hibat-allah_2020</bcf:citekey>
+    <bcf:citekey order="3">choo_2018</bcf:citekey>
+    <bcf:citekey order="3">choo_2020</bcf:citekey>
+    <bcf:citekey order="3">czischek_2018</bcf:citekey>
+    <bcf:citekey order="3">yoshioka_2021</bcf:citekey>
+    <bcf:citekey order="4">pescia_2022</bcf:citekey>
+    <bcf:citekey order="4">pescia_2023</bcf:citekey>
+    <bcf:citekey order="4">pfau_2020</bcf:citekey>
+    <bcf:citekey order="4">hermann_2020</bcf:citekey>
+    <bcf:citekey order="5">pescia_2022</bcf:citekey>
+    <bcf:citekey order="5">kroiss_2016</bcf:citekey>
+    <bcf:citekey order="6">scarselli_2009</bcf:citekey>
+    <bcf:citekey order="6">micheli_2009</bcf:citekey>
+    <bcf:citekey order="7">xu2019understanding</bcf:citekey>
+    <bcf:citekey order="8">vicentini_2022</bcf:citekey>
+    <bcf:citekey order="9">kroiss_2016</bcf:citekey>
+    <bcf:citekey order="10">pescia_2022</bcf:citekey>
+    <bcf:citekey order="11">pescia_2022</bcf:citekey>
+    <bcf:citekey order="11">kroiss_2016</bcf:citekey>
+    <bcf:citekey order="12">pescia_2023</bcf:citekey>
+    <bcf:citekey order="13">carleo_2019</bcf:citekey>
+    <bcf:citekey order="14">mcmillan_1965</bcf:citekey>
+    <bcf:citekey order="15">schiff_1967</bcf:citekey>
+    <bcf:citekey order="16">dornheim_2016</bcf:citekey>
+    <bcf:citekey order="17">magro_1993</bcf:citekey>
+    <bcf:citekey order="18">kroiss_2016</bcf:citekey>
+    <bcf:citekey order="19">carleo_2017</bcf:citekey>
+    <bcf:citekey order="20">hibat-allah_2020</bcf:citekey>
+    <bcf:citekey order="21">choo_2018</bcf:citekey>
+    <bcf:citekey order="22">choo_2020</bcf:citekey>
+    <bcf:citekey order="23">czischek_2018</bcf:citekey>
+    <bcf:citekey order="24">yoshioka_2021</bcf:citekey>
+    <bcf:citekey order="25">pescia_2022</bcf:citekey>
+    <bcf:citekey order="26">pescia_2023</bcf:citekey>
+    <bcf:citekey order="27">pfau_2020</bcf:citekey>
+    <bcf:citekey order="28">hermann_2020</bcf:citekey>
+    <bcf:citekey order="29">scarselli_2009</bcf:citekey>
+    <bcf:citekey order="30">micheli_2009</bcf:citekey>
+    <bcf:citekey order="31">xu2019understanding</bcf:citekey>
+    <bcf:citekey order="32">vicentini_2022</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
@@ -2359,4 +2402,13 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="none/global//global/global"
+                type="entry"
+                sortingtemplatename="none"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>
