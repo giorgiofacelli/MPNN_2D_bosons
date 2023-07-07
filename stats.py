@@ -67,9 +67,6 @@ def corr_2d_xy(x, L, xedges, yedges):
     N, sdim = x.shape
     rho = x.shape[0] / (L[0]*L[1])
 
-    #xedges = jnp.linspace(-sMax[0], sMax[0], npoints)
-    #yedges = jnp.linspace(-sMax[1], sMax[1], npoints)
-
     Ds = dist_min_image(x, L, 2, False) 
     
     result,_,_ = jnp.histogram2d(Ds[:,0], Ds[:,1], bins = [xedges, yedges], density = False)
@@ -128,23 +125,36 @@ Function for computation of structure factor.
 //////////////////////////////////////////////////////////////////////
 """
 
-@partial(jax.jit)#, static_argnums=(0,))
+@partial(jax.jit)
 def kernel_sfactor(vec, coord):
 
     s = jnp.array([jnp.exp(-1j*jnp.dot(v,coord)) for v in vec])
     print(s.shape)
     return jnp.abs(jnp.sum(s))**2
 
-def structure_factor(vec, L, n_max, dn):   
+
+def structure_factor(vec, L, n_max):
+        
+    ''' Computes the structure factor given a set of positions.
+
+    Args:
+    - vec:     2D positions of particles. Should be (nparticles, 2)
+    - L:     length of each side of the square region of the plane. Should be (L_x, L_y)
+    - n_max: Maximal integer for the wavevector
+
+    Returns:
+    - s_factors:  structure factor for each point in the wavevector meshgrid
+    - coords: coords of the wavevector meshgrid
+    '''
 
     vec = jnp.array(vec)
-    #ns = jnp.arange(-n_max, n_max+dn, dn)
-    ns = jnp.arange(-n_max,n_max+dn, dn)
-    kx, ky = jnp.meshgrid(ns,ns)
-    kx, ky = 2.*jnp.pi*kx/L[0], 2.*jnp.pi*ky/L[1]
+    ns = jnp.arange(-n_max,n_max+1, 1)
+    nx, ny = jnp.meshgrid(ns,ns)
+    kx, ky = 2.*jnp.pi*nx/L[0], 2.*jnp.pi*ny/L[1]
 
     coords = jnp.append(kx.reshape(1,-1), ky.reshape(1,-1), axis=0)
     s_factors = jnp.zeros(shape=(coords.shape[1],))
+
     def body_scan(carry, i):
 
         vec, coords, s_factors = carry

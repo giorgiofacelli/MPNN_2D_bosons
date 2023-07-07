@@ -1,0 +1,388 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{carleo_2017}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9e5e8a8744bc0102447d5c22c8f12c2e}{%
+           family={Carleo},
+           familyi={C\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8c95c0b716ad4a10a2ab4370aca0d0ca}{%
+           family={Troyer},
+           familyi={T\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{0f689722cc172e8884104f907fbb42a2}
+      \strng{fullhash}{0f689722cc172e8884104f907fbb42a2}
+      \strng{bibnamehash}{0f689722cc172e8884104f907fbb42a2}
+      \strng{authorbibnamehash}{0f689722cc172e8884104f907fbb42a2}
+      \strng{authornamehash}{0f689722cc172e8884104f907fbb42a2}
+      \strng{authorfullhash}{0f689722cc172e8884104f907fbb42a2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{6325}
+      \field{title}{Solving the quantum many-body problem with artificial neural networks}
+      \field{volume}{355}
+      \field{year}{2017}
+      \field{pages}{602\bibrangedash 606}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1126/science.aag2302
+      \endverb
+      \verb{eprint}
+      \verb https://www.science.org/doi/pdf/10.1126/science.aag2302
+      \endverb
+      \verb{urlraw}
+      \verb https://www.science.org/doi/abs/10.1126/science.aag2302
+      \endverb
+      \verb{url}
+      \verb https://www.science.org/doi/abs/10.1126/science.aag2302
+      \endverb
+    \endentry
+    \entry{hibat-allah_2020}{article}{}
+      \name{author}{5}{}{%
+        {{hash=f8d9a7a5287785ab8e0131b43b63c7b4}{%
+           family={Hibat-Allah},
+           familyi={H\bibinithyphendelim A\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f0f3587e069a45aa3c06ede2cfb44e46}{%
+           family={Ganahl},
+           familyi={G\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=50777a73931eff4c203e3a114366151e}{%
+           family={Hayward},
+           familyi={H\bibinitperiod},
+           given={Lauren\bibnamedelima E.},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=eb7158e0a38c158494a11fe2ebf1db17}{%
+           family={Melko},
+           familyi={M\bibinitperiod},
+           given={Roger\bibnamedelima G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=cb5e0d185d66df725ae13199d38f4265}{%
+           family={Carrasquilla},
+           familyi={C\bibinitperiod},
+           given={Juan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{5394660a358ef17f1034adcbfd6e1c40}
+      \strng{fullhash}{b802229f60fed1b193261c9d25f379ac}
+      \strng{bibnamehash}{5394660a358ef17f1034adcbfd6e1c40}
+      \strng{authorbibnamehash}{5394660a358ef17f1034adcbfd6e1c40}
+      \strng{authornamehash}{5394660a358ef17f1034adcbfd6e1c40}
+      \strng{authorfullhash}{b802229f60fed1b193261c9d25f379ac}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{2}
+      \field{journaltitle}{Phys. Rev. Res.}
+      \field{month}{6}
+      \field{title}{Recurrent neural network wave functions}
+      \field{volume}{2}
+      \field{year}{2020}
+      \field{pages}{023358}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevResearch.2.023358
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevResearch.2.023358
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevResearch.2.023358
+      \endverb
+    \endentry
+    \entry{choo_2018}{article}{}
+      \name{author}{4}{}{%
+        {{hash=0a0c932d38d86e57e3f807218d012d0e}{%
+           family={Choo},
+           familyi={C\bibinitperiod},
+           given={Kenny},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9e5e8a8744bc0102447d5c22c8f12c2e}{%
+           family={Carleo},
+           familyi={C\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+        {{hash=3bef28ff4097b3952f9ca00540cf5a4d}{%
+           family={Regnault},
+           familyi={R\bibinitperiod},
+           given={Nicolas},
+           giveni={N\bibinitperiod}}}%
+        {{hash=1c8677ba5bc12884eb0db91db3352fdb}{%
+           family={Neupert},
+           familyi={N\bibinitperiod},
+           given={Titus},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{7fb767ebafbfcbef87fd2fee068f048a}
+      \strng{fullhash}{db8e577b41f59a9393e4947b577fee86}
+      \strng{bibnamehash}{7fb767ebafbfcbef87fd2fee068f048a}
+      \strng{authorbibnamehash}{7fb767ebafbfcbef87fd2fee068f048a}
+      \strng{authornamehash}{7fb767ebafbfcbef87fd2fee068f048a}
+      \strng{authorfullhash}{db8e577b41f59a9393e4947b577fee86}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{16}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{month}{10}
+      \field{title}{Symmetries and Many-Body Excitations with Neural-Network Quantum States}
+      \field{volume}{121}
+      \field{year}{2018}
+      \field{pages}{167204}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.121.167204
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.121.167204
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevLett.121.167204
+      \endverb
+    \endentry
+    \entry{pescia_2022}{article}{}
+      \name{author}{5}{}{%
+        {{hash=9bbf66547f6690bee3222b0765b0c94e}{%
+           family={Pescia},
+           familyi={P\bibinitperiod},
+           given={Gabriel},
+           giveni={G\bibinitperiod}}}%
+        {{hash=dcbed821c92a82aa9d46cf353c58ec62}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={Jiequn},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e8351bfd6dfca852708d586b94eeeca0}{%
+           family={Lovato},
+           familyi={L\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=54ca88eda8f2fbc2f0b9ce77c9aed27a}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Jianfeng},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9e5e8a8744bc0102447d5c22c8f12c2e}{%
+           family={Carleo},
+           familyi={C\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{fb57516d427b0b5418a1763e1453156a}
+      \strng{fullhash}{c1aba205bb2f1a3ee744d461e5303e27}
+      \strng{bibnamehash}{fb57516d427b0b5418a1763e1453156a}
+      \strng{authorbibnamehash}{fb57516d427b0b5418a1763e1453156a}
+      \strng{authornamehash}{fb57516d427b0b5418a1763e1453156a}
+      \strng{authorfullhash}{c1aba205bb2f1a3ee744d461e5303e27}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{2}
+      \field{journaltitle}{Phys. Rev. Res.}
+      \field{month}{5}
+      \field{title}{Neural-network quantum states for periodic systems in continuous space}
+      \field{volume}{4}
+      \field{year}{2022}
+      \field{pages}{023138}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevResearch.4.023138
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevResearch.4.023138
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevResearch.4.023138
+      \endverb
+    \endentry
+    \entry{pescia_2023}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=9bbf66547f6690bee3222b0765b0c94e}{%
+           family={Pescia},
+           familyi={P\bibinitperiod},
+           given={Gabriel},
+           giveni={G\bibinitperiod}}}%
+        {{hash=e2eaedd65a4a21205e347ca48a9b1c1c}{%
+           family={Nys},
+           familyi={N\bibinitperiod},
+           given={Jannes},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8cf4e615fe02a5da6e5051808d369117}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Jane},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e8351bfd6dfca852708d586b94eeeca0}{%
+           family={Lovato},
+           familyi={L\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9e5e8a8744bc0102447d5c22c8f12c2e}{%
+           family={Carleo},
+           familyi={C\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{fb57516d427b0b5418a1763e1453156a}
+      \strng{fullhash}{0d4791e0aa01280969c304f5d67ba4de}
+      \strng{bibnamehash}{fb57516d427b0b5418a1763e1453156a}
+      \strng{authorbibnamehash}{fb57516d427b0b5418a1763e1453156a}
+      \strng{authornamehash}{fb57516d427b0b5418a1763e1453156a}
+      \strng{authorfullhash}{0d4791e0aa01280969c304f5d67ba4de}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{quant-ph}
+      \field{eprinttype}{arXiv}
+      \field{title}{Message-Passing Neural Quantum States for the Homogeneous Electron Gas}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2305.07240
+      \endverb
+    \endentry
+    \entry{pfau_2020}{article}{}
+      \name{author}{4}{}{%
+        {{hash=d4d433f1bc6bf06aecb4da73f2e81f0c}{%
+           family={Pfau},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=b32c85edee470a88c7f2000c08d4069c}{%
+           family={Spencer},
+           familyi={S\bibinitperiod},
+           given={James\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=1394361e807e91bcc487b787ba2028f3}{%
+           family={Matthews},
+           familyi={M\bibinitperiod},
+           given={Alexander\bibnamedelimb G.\bibnamedelimi D.\bibnamedelimi G.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=d3819d34f06bd9ce4f6d3368fff75b14}{%
+           family={Foulkes},
+           familyi={F\bibinitperiod},
+           given={W.\bibnamedelimi M.\bibnamedelimi C.},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{4d03f80c5aca9d046866b1dcd228219d}
+      \strng{fullhash}{aeaa083e8d1cacd4952330c1b6988ee1}
+      \strng{bibnamehash}{4d03f80c5aca9d046866b1dcd228219d}
+      \strng{authorbibnamehash}{4d03f80c5aca9d046866b1dcd228219d}
+      \strng{authornamehash}{4d03f80c5aca9d046866b1dcd228219d}
+      \strng{authorfullhash}{aeaa083e8d1cacd4952330c1b6988ee1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{3}
+      \field{journaltitle}{Phys. Rev. Res.}
+      \field{month}{9}
+      \field{title}{Ab initio solution of the many-electron Schrödinger equation with deep neural networks}
+      \field{volume}{2}
+      \field{year}{2020}
+      \field{pages}{033429}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevResearch.2.033429
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevResearch.2.033429
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevResearch.2.033429
+      \endverb
+    \endentry
+    \entry{gilmer2017neural}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=4f550339f0337905aa634f39e1ba4833}{%
+           family={Gilmer},
+           familyi={G\bibinitperiod},
+           given={Justin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=aa3475bbb938eec3f9f0d7c8d44f1e86}{%
+           family={Schoenholz},
+           familyi={S\bibinitperiod},
+           given={Samuel\bibnamedelima S.},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=e9632c2c29a574cd09a5a7503be60435}{%
+           family={Riley},
+           familyi={R\bibinitperiod},
+           given={Patrick\bibnamedelima F.},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=494b568c5dc85ba8f3f409635f9c5f25}{%
+           family={Vinyals},
+           familyi={V\bibinitperiod},
+           given={Oriol},
+           giveni={O\bibinitperiod}}}%
+        {{hash=b2367e57c17225a47853346440e87b35}{%
+           family={Dahl},
+           familyi={D\bibinitperiod},
+           given={George\bibnamedelima E.},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{c654290e16b9e71825428d767650ff2a}
+      \strng{fullhash}{a97dbeb15b563be460fc056e7a076a4b}
+      \strng{bibnamehash}{c654290e16b9e71825428d767650ff2a}
+      \strng{authorbibnamehash}{c654290e16b9e71825428d767650ff2a}
+      \strng{authornamehash}{c654290e16b9e71825428d767650ff2a}
+      \strng{authorfullhash}{a97dbeb15b563be460fc056e7a076a4b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{title}{Neural Message Passing for Quantum Chemistry}
+      \field{year}{2017}
+      \verb{eprint}
+      \verb 1704.01212
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
