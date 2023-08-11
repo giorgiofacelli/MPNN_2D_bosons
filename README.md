@@ -1,6 +1,6 @@
 # Graph Neural Network (GNN) for 2D bosonic systems
 
-During the duration of my $2^{nd}$ semester as a MSc student, I developed a GNN ML architecture to study continuous-variable boson 
+During the duration of my second semester as a MSc student, I developed a GNN ML architecture to study continuous-variable boson 
 particles in a periodic 2D environment. The code is entirely based on JAX Python package and is was mainly trained via open-source package NetKet. 
 The model remains quite general and can be applied to arbitrary system size and spatial dimensionality. 
 The repository is organized as follows:
