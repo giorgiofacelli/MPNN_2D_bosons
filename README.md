@@ -9,5 +9,6 @@ The repository is organized as follows:
 - In **deepset_model.py** is a simpler deep-NN model,
 - In **distances.py** are defined some useful functions to compute distances amongst particles,
 - In **stats.py** functions for post-training analysis  of the system. For example, the readial correlation function is included,
+- In "runfile.run" is an example of how to run everything on the EPFL HPC cluster
 - In the *latex* folder I included my final report on the project, as well as some slides explaining the main ideas,
-- In the *log_files* folder I included the data used to reproduce the results shown in the report.
+- In the *log_files* folder I included the data used to reproduce the results shown in the report,
