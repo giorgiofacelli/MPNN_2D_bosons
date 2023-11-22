@@ -7,7 +7,7 @@ import numpy as np
 from distances import distance_matrix, dist_min_image
 from MPNN_model import logpsi
 
-
+#define potential energy
 def V(x, sdim, L, eps, sigma):
     #vector of distances
 
@@ -21,17 +21,17 @@ def V(x, sdim, L, eps, sigma):
 
     return pot
 
-
+#track acceptance rate of MCMC
 def mycb(step, logged_data, driver):
     logged_data["acceptance"] = float(driver.state.sampler_state.acceptance)
     return True
 
 
-L = 20
-nparticles = 20
-sigma = 2**-.5
-sdim = 1
-eps = 2.
+L = 20            #system size
+nparticles = 20   #number of particles
+sigma = 2**-.5    #metrpolis hastings sampling std
+sdim = 1          #spatial dimension
+eps = 2.          #potential coefficient 
 
 v = lambda x: V(x,sdim,L,eps,sigma)
 
