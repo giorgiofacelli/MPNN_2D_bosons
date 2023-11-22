@@ -3,6 +3,7 @@ _pycache_/
 .ipynb_checkpoints/
 .idea/
 .vscode/
+**/*.ipynb_checkpoints/
 analysis.ipynb
 rho_sweep_analysis.ipynb
 
